@@ -22,6 +22,7 @@ jobs:
             docker build -t nodejswebapp1 -t sushilohol/nodejswebapp1:latest .
             echo $DOCKER_PASSWORD | docker login -u sushilohol --password-stdin
             docker push sushilohol/nodejswebapp1:latest
+            docker run -itd --name nodejs123 -p 8081:8081 sushilohol/nodejswebapp1:latest
 
 workflows:
   build_test:
